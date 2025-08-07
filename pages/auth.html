@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication Page</title>
+    <link rel="stylesheet" href="../src/css/auth.css" />
+    <script defer src="../src/javascript/authPage.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <img src="../asset/auth/bee-logo.jpg" alt="Logo" class="logo" />
+      <!-- Login Form -->
+      <div id="login-form" class="form-container">
+        <h2>Login</h2>
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input id="login-email" type="email" placeholder="Email" />
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input id="login-password" type="password" placeholder="Password" />
+        </div>
+        <div id="login-error" class="error"></div>
+        <button>Login</button>
+        <p>Don't have an account? <a href="#">Register</a></p>
+      </div>
+
+      <!-- Register Form -->
+      <div id="register-form" class="form-container hidden">
+        <h2>Register</h2>
+        <div class="form-group">
+          <label for="register-username">Username</label>
+          <input id="register-username" type="text" placeholder="Username" />
+        </div>
+        <div class="form-group">
+          <label for="register-email">Email</label>
+          <input id="register-email" type="email" placeholder="Email" />
+        </div>
+        <div class="form-group">
+          <label for="register-password">Password</label>
+          <input
+            id="register-password"
+            type="password"
+            placeholder="Password"
+          />
+        </div>
+        <div id="register-error" class="error"></div>
+        <button>Register</button>
+        <p>Already have an account? <a href="#">Login</a></p>
+      </div>
+    </div>
+
+    <!-- Modal for Password Length Alert -->
+    <div id="password-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Password Too Short</h3>
+        <p>Your password must be at least 6 characters long.</p>
+        <button onclick="closeModal()">OK</button>
+      </div>
+    </div>
+
+    <!-- Modal for Alerts -->
+    <div id="alert-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3 id="modal-title">Error</h3>
+        <p id="modal-message">An error occurred.</p>
+        <button onclick="closeModal()">OK</button>
+      </div>
+    </div>
+  </body>
+</html>
