@@ -51,11 +51,14 @@ This is a collaborative HTML, CSS, and JavaScript-based e-commerce website proje
 Use the `:root` selector in CSS to define:
 
 ```css
-:root {
-  --primary-color: #4caf50;
-  --font-main: "Segoe UI", sans-serif;
-  --padding: 1rem;
-  --radius: 6px;
+/* Styling buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 ```
 
@@ -79,7 +82,7 @@ Responsible for:
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-team/ecommerce-project.git
+   git clone https://github.com/Chhunkea/Team-project.git
    ```
 
 2. Open `index.html` in your browser to view the project.
@@ -105,11 +108,9 @@ Collaborate and share feedback regularly.
 - Keep code clean and modular.
 - Use descriptive class names.
 - Commit frequently with clear messages.
-- Review others’ code before merging.
 
 ---
 
 ## 📧 Contact
 
 Team XYZ  
-📩 team@example.com
