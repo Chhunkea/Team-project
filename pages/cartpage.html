@@ -14,8 +14,13 @@
   </head>
   <body>
     <!-- Navigation Bar -->
-    <component-navbar></component-navbar>
-
+    <component-navbar
+      brand="SB Bakehouse"
+      activeIndex="1"
+      links='[{"text": "Home", "href": "../index.html"}, {"text": "Products", "href": "../pages/productpage.html"}, {"text": "Cart", "href": "../pages/cartpage.html"}, {"text": "About Us", "href": "../pages/aboutpage.html"}]'
+    >
+    </component-navbar>
+    
     <!-- Cart Section -->
     <section class="py-5">
       <div class="container">
