@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Green Tea Powder",
+    "price": 29.99,
+    "image": "asset/homepage/product-1.jpg"
+  },
+  {
+    "name": "Cupcake Tray",
+    "price": 49.99,
+    "image": "asset/homepage/product-2.jpg"
+  },
+  {
+    "name": "Matcha Tin",
+    "price": 19.99,
+    "image": "asset/homepage/product-3.jpg"
+  },
+  {
+    "name": "Fruit Cake Set",
+    "price": 19.99,
+    "image": "asset/homepage/product-4.jpg"
+  },
+  {
+    "name": "Pastry Box",
+    "price": 19.99,
+    "image": "asset/homepage/product-5.jpg"
+  },
+  {
+    "name": "Cookie Jar",
+    "price": 19.99,
+    "image": "asset/homepage/product-6.jpg"
+  },
+  {
+    "name": "Brownie Set",
+    "price": 19.99,
+    "image": "asset/homepage/product-7.jpg"
+  },
+  {
+    "name": "Dessert Platter",
+    "price": 19.99,
+    "image": "asset/homepage/product-8.jpg"
+  }
+]

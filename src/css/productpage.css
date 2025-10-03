@@ -1,41 +1,124 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #a88473;
+  margin: 0;
+  padding: 0;
 }
+
 .navbar-brand {
   font-weight: bold;
   font-size: 1.5rem;
 }
-.product-card {
+
+#product-container .product-card {
   background-color: #dfd4cd;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s;
+  margin-bottom: 20px;
+  max-width: 100%;
 }
-.product-card:hover {
+
+#product-container .product-card:hover {
   transform: scale(1.05);
 }
-.product-card img {
+
+#product-container .product-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
-.card-body {
+
+#product-container .card-body {
   padding: 15px;
   text-align: center;
+  background-color: #f8f1ec;
 }
-.btn-primary {
+
+#product-container .card-body h5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #6b4e31;
+  margin: 0;
+}
+
+#product-container .card-body p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+#product-container .btn-primary {
   background-color: #007bff;
   border: none;
   border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
 }
-.btn-primary:hover {
+
+#product-container .btn-primary:hover {
   background-color: #0056b3;
 }
-.footer {
-  background-color: #343a40;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .navbar-brand {
+    font-size: 1.4rem;
+  }
+  #product-container .product-card img {
+    height: 180px;
+  }
+  #product-container .card-body {
+    padding: 12px;
+  }
+  #product-container .btn-primary {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 776px) {
+  .navbar-brand {
+    font-size: 1.4rem;
+  }
+  #product-container .product-card img {
+    height: 300px;
+    object-fit: cover;
+  }
+  #product-container .card-body {
+    padding: 12px;
+  }
+  #product-container .btn-primary {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  #product-container .product-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  #product-container .card-body {
+    padding: 12px;
+  }
+  #product-container .card-body h5 {
+    font-size: 1.1rem;
+  }
+  #product-container .card-body p {
+    font-size: 0.95rem;
+  }
+  #product-container .btn-primary {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+  .footer {
+    padding: 10px 0;
+  }
 }
