@@ -20,6 +20,7 @@ body {
 }
 
 .about-title {
+  margin-top: 42px;
   font-size: 3rem;
   color: #ff69b4;
   text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
@@ -132,6 +133,7 @@ body {
 
 @media (max-width: 768px) {
   .about-title {
+    margin-top: 42px;
     font-size: 2.2rem;
   }
   .lead {
@@ -163,6 +165,7 @@ body {
 
 @media (max-width: 576px) {
   .about-title {
+    margin-top: 42px;
     font-size: 1.8rem;
   }
   .lead {

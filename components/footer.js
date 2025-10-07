@@ -7,9 +7,11 @@ class footer extends HTMLElement {
     this.innerHTML = `
     <!-- Footer -->
     <footer class="footer">
-      <div class="container">
-        <p>&copy; Established 2025 SB Bakehouse.</p>
-      </div>
+    <div class="footer-brand">@ SB Bakehouse</div>
+    <div class="footer-tagline">Grab your bakery treats now!</div>
+    <div class="footer-copyright">
+      &copy; 2025 SB Bakehouse. All rights reserved.
+    </div>
     </footer>
       `;
   }

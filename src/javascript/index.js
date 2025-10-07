@@ -79,7 +79,11 @@ document.addEventListener("click", (e) => {
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-    alert("Item added to cart!");
+    Swal.fire({
+      title: "Add to cart!",
+      icon: "success",
+      draggable: true
+    });
   }
 });
 

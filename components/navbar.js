@@ -32,7 +32,21 @@ class Navbar extends HTMLElement {
 
   connectedCallback() {
     console.log("Connected to DOM");
+    // Dynamically determine activeIndex based on the current page URL
+    const currentPath = window.location.pathname;
+    console.log("Current pathname:", currentPath);
+    this.links.forEach((link, index) => {
+      const normalizedHref = link.href.replace(/^\.\.\//, "");
+      if (currentPath.endsWith(normalizedHref)) {
+        this.activeIndex = index;
+        console.log(`Matched ${link.text} at index ${index} with ${currentPath}`);
+      }
+    });
     this.render();
+    // Update cart count on initial load
+    this.updateCartCount();
+    // Listen for storage changes (e.g., from other pages)
+    window.addEventListener("storage", () => this.updateCartCount());
     // Inject styles into the document head
     if (!document.getElementById("navbar-styles")) {
       const style = document.createElement("style");
@@ -42,6 +56,11 @@ class Navbar extends HTMLElement {
           background-color: #6b4e31;
           padding: 1rem 2rem;
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
         }
         .navbar-brand {
           font-weight: 700;
@@ -57,6 +76,7 @@ class Navbar extends HTMLElement {
           font-size: 1.1rem;
           margin-left: 1rem;
           transition: color 0.3s ease;
+          position: relative;
         }
         .nav-link:hover,
         .nav-link.active {
@@ -69,9 +89,22 @@ class Navbar extends HTMLElement {
         .navbar-collapse {
           padding-top: 10px;
         }
+        .cart-badge {
+          position: absolute;
+          top: -5px;
+          right: -10px;
+          background-color: #dc3545;
+          color: #fff;
+          border-radius: 50%;
+          padding: 2px 6px;
+          font-size: 0.8rem;
+          min-width: 1rem;
+          text-align: center;
+        }
         @media (max-width: 767px) {
           .navbar {
             padding: 0.8rem;
+            padding-bottom: 0.8rem; /* Adjusted for mobile */
           }
           .navbar-nav {
             text-align: left;
@@ -80,6 +113,10 @@ class Navbar extends HTMLElement {
           .nav-link {
             margin: 0.5rem 0;
             font-size: 1rem;
+          }
+          .cart-badge {
+            top: -2px;
+            right: -5px;
           }
         }
       `;
@@ -105,6 +142,27 @@ class Navbar extends HTMLElement {
     }
   }
 
+  updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartLink = this.querySelector(`a[href="${this.links.find(link => link.text === "Cart")?.href}"]`);
+    if (cartLink) {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const badge = cartLink.querySelector(".cart-badge");
+      if (totalItems > 0) {
+        if (!badge) {
+          const newBadge = document.createElement("span");
+          newBadge.className = "cart-badge";
+          newBadge.textContent = totalItems;
+          cartLink.appendChild(newBadge);
+        } else {
+          badge.textContent = totalItems;
+        }
+      } else if (badge) {
+        badge.remove();
+      }
+    }
+  }
+
   render() {
     console.log(
       "Rendering Navbar with activeIndex:",
@@ -118,7 +176,9 @@ class Navbar extends HTMLElement {
         <li class="nav-item">
           <a class="nav-link ${link.active ? "active" : ""}" href="${
           link.href
-        }">${link.text}</a>
+        }">${link.text}${
+          link.text === "Cart" ? '<span class="cart-badge"></span>' : ""
+        }</a>
         </li>
       `
       )
@@ -141,6 +201,7 @@ class Navbar extends HTMLElement {
         </div>
       </nav>
     `;
+    this.updateCartCount(); // Update cart count after rendering
   }
 }
 

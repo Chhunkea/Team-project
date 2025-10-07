@@ -10,6 +10,14 @@ body {
   font-size: 1.5rem;
 }
 
+.cart-title {
+  font-size: 27.2px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
 #product-container .product-card {
   background-color: #dfd4cd;
   border: none;
@@ -117,8 +125,5 @@ body {
   #product-container .btn-primary {
     padding: 8px 15px;
     font-size: 0.9rem;
-  }
-  .footer {
-    padding: 10px 0;
   }
 }
